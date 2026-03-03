@@ -509,12 +509,13 @@
        ondragover="handleDragOver(event)"
        ondragleave="handleDragLeave(event)"
        ondrop="handleDrop(event)">
-    <input type="file" id="fileInput" onchange="handleFileSelect(event)" />
+    <input type="file" id="fileInput" onchange="handleFileSelect(event)" style="display:none" />
     <div class="upload-icon">☁</div>
     <p><strong>Drop files here</strong> or click to browse</p>
     <p style="font-size:0.75rem; margin-top:4px; color:var(--text-muted)">Any file type supported</p>
     <div id="selectedFileName"></div>
     <div class="upload-actions">
+      <button class="btn btn-ghost" onclick="document.getElementById('fileInput').click()">📂 Choose File</button>
       <button class="btn btn-primary" onclick="uploadFile()" id="uploadBtn" disabled>⬆ Upload File</button>
     </div>
     <div id="uploadProgress" style="display:none; margin-top:10px;">
