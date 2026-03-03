@@ -1,8 +1,10 @@
 {
-  "functions": {
-    "api/github.js": {
-      "memory": 128,
-      "maxDuration": 10
-    }
-  }
+  "version": 2,
+  "builds": [
+    { "src": "api/github.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/github", "dest": "/api/github.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
